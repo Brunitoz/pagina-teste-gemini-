@@ -53,3 +53,17 @@ footer {
     margin-top: 20px;
     color: #777;
 }
+/*
+  =================================
+  ESTILO DA IMAGEM (ADICIONE ISSO)
+  =================================
+*/
+
+.imagem-conteudo {
+    width: 100%; /* Faz a imagem ocupar 100% da largura do <main> */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Cantos arredondados (igual ao <main>) */
+    margin-top: 20px; /* Espaço acima da imagem */
+    margin-bottom: 20px; /* Espaço abaixo da imagem */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra opcional */
+}
