@@ -1,69 +1,117 @@
-/* Estilo geral do corpo */
-body {
-    font-family: Arial, sans-serif; /* Define a fonte */
+/* Reset de Box-model */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Cor de fundo suave */
-    color: #333; /* Cor do texto principal */
+    box-sizing: border-box;
 }
 
-/* Estilo do cabeçalho */
-header {
-    background-color: #005a9c; /* Um tom de azul */
-    color: white; /* Texto branco */
-    padding: 20px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+}
+
+/* Estilo do carrossel de fotos */
+.photo-carousel-item {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.photo-carousel-item:hover {
+    transform: scale(1.05);
+}
+
+/* Layout do carrossel */
+.photo-carousel-container {
+    position: relative;
+}
+
+.photo-slot {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: #fff;
+    border: 2px dashed #9ca3af;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.photo-slot:hover {
+    border-color: #3b82f6;
+    background: linear-gradient(45deg, #eff6ff, #dbeafe);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: #fff;
+}
+
+.carousel-btn.left {
+    left: 2%;
+}
+
+.carousel-btn.right {
+    right: 2%;
+}
+
+.text-center {
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
+.text-gray-500 {
+    color: #6b7280;
 }
 
-/* Estilo do conteúdo principal */
-main {
-    max-width: 800px; /* Largura máxima */
-    margin: 20px auto; /* Centraliza o conteúdo */
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px; /* Cantos arredondados */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra leve */
+/* Outros estilos */
+.text-3xl {
+    font-size: 1.875rem;
 }
 
-/* Estilo do botão */
-button {
-    background-color: #007BFF; /* Azul mais vibrante */
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer; /* Muda o cursor para "mãozinha" */
-    font-size: 1em;
+.text-sm {
+    font-size: 0.875rem;
 }
 
-/* Efeito ao passar o mouse sobre o botão */
-button:hover {
-    background-color: #0056b3;
+.text-2xl {
+    font-size: 1.5rem;
 }
 
-/* Estilo do rodapé */
-footer {
-    text-align: center;
-    padding: 15px;
-    margin-top: 20px;
-    color: #777;
+.text-xl {
+    font-size: 1.25rem;
 }
-/*
-  =================================
-  ESTILO DA IMAGEM (ADICIONE ISSO)
-  =================================
-*/
 
-.imagem-conteudo {
-    width: 100%; /* Faz a imagem ocupar 100% da largura do <main> */
-    height: auto; /* Mantém a proporção da imagem */
-    border-radius: 8px; /* Cantos arredondados (igual ao <main>) */
-    margin-top: 20px; /* Espaço acima da imagem */
-    margin-bottom: 20px; /* Espaço abaixo da imagem */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra opcional */
+/* Ajustes para o layout */
+.max-w-6xl {
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+.py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
