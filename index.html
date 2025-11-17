@@ -1,29 +1,18 @@
 <!doctype html>
 <html lang="pt-BR" class="h-full">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bruno Gonçalves - Página Pessoal</title>
-  <script src="/_sdk/element_sdk.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-        body {
-            box-sizing: border-box;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno Gonçalves - Página Pessoal</title>
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { box-sizing: border-box; }
+        .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+
         .photo-placeholder {
             background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
             border: 2px dashed #9ca3af;
@@ -34,676 +23,114 @@
             border-radius: 12px;
             transition: all 0.3s ease;
         }
-        
         .photo-placeholder:hover {
             border-color: #3b82f6;
             background: linear-gradient(45deg, #eff6ff, #dbeafe);
         }
-        
+
         .section-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
-        .fade-in {
-            animation: fadeIn 0.8s ease-in;
-        }
-        
+
+        .fade-in { animation: fadeIn 0.8s ease-in; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
-        .pulse-heart {
-            animation: pulseHeart 2s infinite;
-        }
-        
+
+        .pulse-heart { animation: pulseHeart 2s infinite; }
         @keyframes pulseHeart {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.1); }
         }
     </style>
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
- <body class="h-full"><!-- Esteira de Fotos -->
-  <section class="bg-gray-100 py-8 overflow-hidden">
-   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">📸 Minhas Fotos</h2>
-    <div class="photo-carousel-container relative">
-     <div id="photo-carousel" class="flex gap-4 overflow-x-auto pb-4 scroll-smooth"><<img src="eu.jpeg" alt="Minha foto de perfil">
 
-<img src="larinha.jpeg, eu.jpeg " alt="Outra foto">>
-      <div class="photo-slot flex-shrink-0 w-48 h-48 bg-white rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center hover:border-blue-400 transition-colors cursor-pointer">
-       <div class="text-center text-gray-500">
-        <div class="text-3xl mb-2">
-         📷
+    <style>@view-transition { navigation: auto; }</style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+</head>
+
+<body class="h-full">
+
+<!-- --------------------------------------------------------- -->
+<!--                      ESTEIRA DE FOTOS                     -->
+<!-- --------------------------------------------------------- -->
+<section class="bg-gray-100 py-8 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">📸 Minhas Fotos</h2>
+
+        <div class="photo-carousel-container relative">
+
+            <div id="photo-carousel" class="flex gap-4 overflow-x-auto pb-4 scroll-smooth">
+
+                <!-- Foto 1 -->
+                <img src="eu.jpeg" 
+                     alt="Minha foto de perfil"
+                     class="flex-shrink-0 w-48 h-48 object-cover rounded-xl shadow">
+
+                <!-- Foto 2 -->
+                <img src="larinha.jpeg" 
+                     alt="Larinha"
+                     class="flex-shrink-0 w-48 h-48 object-cover rounded-xl shadow">
+
+                <!-- Slot para adicionar -->
+                <div class="photo-slot flex-shrink-0 w-48 h-48 bg-white rounded-xl border-2 
+                            border-dashed border-gray-300 flex items-center justify-center 
+                            hover:border-blue-400 transition-colors cursor-pointer">
+                    <div class="text-center text-gray-500">
+                        <div class="text-3xl mb-2">📷</div>
+                        <p class="text-sm">Adicionar foto</p>
+                    </div>
+                </div>
+
+                <!-- Repito TODOS os placeholders originais -->
+                <div class="photo-slot flex-shrink-0 w-48 h-48 bg-white rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center hover:border-blue-400 transition-colors cursor-pointer">
+                    <div class="text-center text-gray-500"><div class="text-3xl mb-2">📷</div><p class="text-sm">Adicionar foto</p></div>
+                </div>
+
+                <div class="photo-slot flex-shrink-0 w-48 h-48 bg-white rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center hover:border-blue-400 transition-colors cursor-pointer">
+                    <div class="text-center text-gray-500"><div class="text-3xl mb-2">📷</div><p class="text-sm">Adicionar foto</p></div>
+                </div>
+
+                <div class="photo-slot flex-shrink-0 w-48 h-48 bg-white rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center hover:border-blue-400 transition-colors cursor-pointer">
+                    <div class="text-center text-gray-500"><div class="text-3xl mb-2">📷</div><p class="text-sm">Adicionar foto</p></div>
+                </div>
+
+                <div class="photo-slot flex-shrink-0 w-48 h-48 bg-white rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center hover:border-blue-400 transition-colors cursor-pointer">
+                    <div class="text-center text-gray-500"><div class="text-3xl mb-2">📷</div><p class="text-sm">Adicionar foto</p></div>
+                </div>
+
+                <div class="photo-slot flex-shrink-0 w-48 h-48 bg-white rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center hover:border-blue-400 transition-colors cursor-pointer">
+                    <div class="text-center text-gray-500"><div class="text-3xl mb-2">📷</div><p class="text-sm">Adicionar foto</p></div>
+                </div>
+
+                <div class="photo-slot flex-shrink-0 w-48 h-48 bg-white rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center hover:border-blue-400 transition-colors cursor-pointer">
+                    <div class="text-center text-gray-500"><div class="text-3xl mb-2">📷</div><p class="text-sm">Adicionar foto</p></div>
+                </div>
+
+                <div class="photo-slot flex-shrink-0 w-48 h-48 bg-white rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center hover:border-blue-400 transition-colors cursor-pointer">
+                    <div class="text-center text-gray-500"><div class="text-3xl mb-2">📷</div><p class="text-sm">Adicionar foto</p></div>
+                </div>
+
+            </div>
+
+            <!-- Botões -->
+            <button onclick="scrollCarousel('left')" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 rounded-full p-2 shadow-lg transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+
+            <button onclick="scrollCarousel('right')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 rounded-full p-2 shadow-lg transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+
         </div>
-        <p class="text-sm">Adicionar foto</p>
-       </div>
-      </div><!-- Foto placeholder 2 -->
-      <div class="photo-slot flex-shrink-0 w-48 h-48 bg-white rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center hover:border-blue-400 transition-colors cursor-pointer">
-       <div class="text-center text-gray-500">
-        <div class="text-3xl mb-2">
-         📷
-        </div>
-        <p class="text-sm">Adicionar foto</p>
-       </div>
-      </div><!-- Foto placeholder 3 -->
-      <div class="photo-slot flex-shrink-0 w-48 h-48 bg-white rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center hover:border-blue-400 transition-colors cursor-pointer">
-       <div class="text-center text-gray-500">
-        <div class="text-3xl mb-2">
-         📷
-        </div>
-        <p class="text-sm">Adicionar foto</p>
-       </div>
-      </div><!-- Foto placeholder 4 -->
-      <div class="photo-slot flex-shrink-0 w-48 h-48 bg-white rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center hover:border-blue-400 transition-colors cursor-pointer">
-       <div class="text-center text-gray-500">
-        <div class="text-3xl mb-2">
-         📷
-        </div>
-        <p class="text-sm">Adicionar foto</p>
-       </div>
-      </div><!-- Foto placeholder 5 -->
-      <div class="photo-slot flex-shrink-0 w-48 h-48 bg-white rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center hover:border-blue-400 transition-colors cursor-pointer">
-       <div class="text-center text-gray-500">
-        <div class="text-3xl mb-2">
-         📷
-        </div>
-        <p class="text-sm">Adicionar foto</p>
-       </div>
-      </div><!-- Foto placeholder 6 -->
-      <div class="photo-slot flex-shrink-0 w-48 h-48 bg-white rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center hover:border-blue-400 transition-colors cursor-pointer">
-       <div class="text-center text-gray-500">
-        <div class="text-3xl mb-2">
-         📷
-        </div>
-        <p class="text-sm">Adicionar foto</p>
-       </div>
-      </div><!-- Foto placeholder 7 -->
-      <div class="photo-slot flex-shrink-0 w-48 h-48 bg-white rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center hover:border-blue-400 transition-colors cursor-pointer">
-       <div class="text-center text-gray-500">
-        <div class="text-3xl mb-2">
-         📷
-        </div>
-        <p class="text-sm">Adicionar foto</p>
-       </div>
-      </div><!-- Foto placeholder 8 -->
-      <div class="photo-slot flex-shrink-0 w-48 h-48 bg-white rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center hover:border-blue-400 transition-colors cursor-pointer">
-       <div class="text-center text-gray-500">
-        <div class="text-3xl mb-2">
-         📷
-        </div>
-        <p class="text-sm">Adicionar foto</p>
-       </div>
-      </div>
-     </div><!-- Botões de navegação --> <button onclick="scrollCarousel('left')" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 rounded-full p-2 shadow-lg transition-all">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-      </svg></button> <button onclick="scrollCarousel('right')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 rounded-full p-2 shadow-lg transition-all">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-      </svg></button>
+
+        <p class="text-center text-gray-600 mt-4 text-sm">← Arraste para ver mais fotos →</p>
     </div>
-    <p class="text-center text-gray-600 mt-4 text-sm">← Arraste para ver mais fotos →</p>
-   </div>
-  </section><!-- Header com gradiente -->
-  <header class="gradient-bg text-white py-16">
-   <div class="max-w-6xl mx-auto px-6 text-center">
-    <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-6xl">
-     👨‍🎓
-    </div>
-    <h1 id="nome-completo" class="text-4xl md:text-5xl font-bold mb-4">Bruno Gonçalves Oliveira</h1>
-    <p id="idade-escola" class="text-xl mb-2">16 anos • Colégio Estadual Professor Júlio Szymanski</p>
-    <p id="trabalho" class="text-lg opacity-90">Transportadora Nichele</p>
-   </div>
-  </header>
-  <main class="max-w-6xl mx-auto px-6 py-12"><!-- Sobre mim -->
-   <section class="section-card rounded-2xl p-8 mb-12 fade-in">
-    <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center"><span class="text-4xl mr-3">🌟</span> Sobre Mim</h2>
-    <p id="descricao-pessoal" class="text-lg text-gray-700 leading-relaxed mb-6">Divido meu dia entre os estudos e o trabalho na Transportadora Nichele, onde aprendo diariamente sobre responsabilidade, disciplina e dedicação — valores que carrego comigo em tudo o que faço. Sou apaixonado por UFC, futebol e, principalmente, pela minha namorada, Maria Luiza Pascuti.</p><!-- Família -->
-    <div class="bg-blue-50 rounded-xl p-6">
-     <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center"><span class="text-3xl mr-3 pulse-heart">❤️</span> Minha Família</h3>
-     <p id="pais" class="text-gray-700 mb-3"><strong>Pais:</strong> Erilda Aparecida e Messias Macedo</p>
-     <p id="irmaos" class="text-gray-700"><strong>Irmãos:</strong> Larissa (26), Ygor (25) e Henrique (23)</p>
-     <p class="text-gray-700 mt-3"><strong>Sobrinhos:</strong> Laura (8), Samuel (6), Gabriel (3) e Miguel (1)</p>
-     <p class="text-gray-700 mt-3"><strong>Afilhado:</strong> Miguel Alencar Keller 👶💙</p>
-    </div>
-   </section><!-- Grid de Álbuns de Fotos -->
-   <section class="fade-in">
-    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center flex items-center justify-center"><span class="text-4xl mr-3">📸</span> Meus Momentos Especiais</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Família -->
-     <div class="section-card rounded-2xl p-6 card-hover"><button onclick="showSection('familia')" class="w-full text-left"> <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center hover:text-blue-600 transition-colors"><span class="text-2xl mr-2">👨‍👩‍👧‍👦</span> Família <span class="ml-auto text-blue-500">→</span></h3></button>
-      <div class="photo-placeholder">
-       <div class="text-center text-gray-500">
-        <div class="text-4xl mb-2">
-         📷
-        </div>
-        <p>Adicione fotos da família</p>
-       </div>
-      </div>
-     </div><!-- Maria Luiza -->
-     <div class="section-card rounded-2xl p-6 card-hover"><button onclick="showSection('maria-luiza')" class="w-full text-left"> <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center hover:text-pink-600 transition-colors"><span class="text-2xl mr-2 pulse-heart">💕</span> Maria Luiza <span class="ml-auto text-pink-500">→</span></h3></button>
-      <div class="photo-placeholder">
-       <div class="text-center text-gray-500">
-        <div class="text-4xl mb-2">
-         📷
-        </div>
-        <p>Momentos com a Maria Luiza</p>
-       </div>
-      </div>
-     </div><!-- Miguel (Afilhado) -->
-     <div class="section-card rounded-2xl p-6 card-hover"><button onclick="showSection('miguel')" class="w-full text-left"> <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center hover:text-blue-600 transition-colors"><span class="text-2xl mr-2">👶</span> Miguel (Afilhado) <span class="ml-auto text-blue-500">→</span></h3></button>
-      <div class="photo-placeholder">
-       <div class="text-center text-gray-500">
-        <div class="text-4xl mb-2">
-         📷
-        </div>
-        <p>Fotos do Miguel</p>
-       </div>
-      </div>
-     </div><!-- Crianças -->
-     <div class="section-card rounded-2xl p-6 card-hover"><button onclick="showSection('criancas')" class="w-full text-left"> <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center hover:text-green-600 transition-colors"><span class="text-2xl mr-2">🧒</span> Crianças <span class="ml-auto text-green-500">→</span></h3></button>
-      <div class="photo-placeholder">
-       <div class="text-center text-gray-500">
-        <div class="text-4xl mb-2">
-         📷
-        </div>
-        <p>Momentos com as crianças</p>
-       </div>
-      </div>
-     </div><!-- Futebol -->
-     <div class="section-card rounded-2xl p-6 card-hover"><button onclick="showSection('futebol')" class="w-full text-left"> <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center hover:text-green-600 transition-colors"><span class="text-2xl mr-2">⚽</span> Futebol <span class="ml-auto text-green-500">→</span></h3></button>
-      <div class="photo-placeholder">
-       <div class="text-center text-gray-500">
-        <div class="text-4xl mb-2">
-         📷
-        </div>
-        <p>Jogos e momentos do futebol</p>
-       </div>
-      </div>
-     </div><!-- Amizades -->
-     <div class="section-card rounded-2xl p-6 card-hover"><button onclick="showSection('amizades')" class="w-full text-left"> <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center hover:text-purple-600 transition-colors"><span class="text-2xl mr-2">👥</span> Amizades <span class="ml-auto text-purple-500">→</span></h3></button>
-      <div class="photo-placeholder">
-       <div class="text-center text-gray-500">
-        <div class="text-4xl mb-2">
-         📷
-        </div>
-        <p>Fotos com os amigos</p>
-       </div>
-      </div>
-     </div><!-- Igreja -->
-     <div class="section-card rounded-2xl p-6 card-hover"><button onclick="showSection('igreja')" class="w-full text-left"> <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center hover:text-yellow-600 transition-colors"><span class="text-2xl mr-2">⛪</span> Igreja <span class="ml-auto text-yellow-500">→</span></h3></button>
-      <div class="photo-placeholder">
-       <div class="text-center text-gray-500">
-        <div class="text-4xl mb-2">
-         📷
-        </div>
-        <p>Momentos na igreja</p>
-       </div>
-      </div>
-     </div><!-- Animais -->
-     <div class="section-card rounded-2xl p-6 card-hover"><button onclick="showSection('animais')" class="w-full text-left"> <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center hover:text-orange-600 transition-colors"><span class="text-2xl mr-2">🐾</span> Animais <span class="ml-auto text-orange-500">→</span></h3></button>
-      <div class="photo-placeholder">
-       <div class="text-center text-gray-500">
-        <div class="text-4xl mb-2">
-         📷
-        </div>
-        <p>Fotos com animais</p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- Meus Sonhos -->
-   <section class="section-card rounded-2xl p-8 mt-12 fade-in">
-    <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center"><span class="text-4xl mr-3">✨</span> Meus Sonhos</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-     <div class="text-center p-4 bg-blue-50 rounded-xl">
-      <div class="text-3xl mb-2">
-       👶
-      </div>
-      <h3 class="font-semibold text-gray-800">Ser Pai</h3>
-      <p class="text-gray-600 text-sm mt-2">Realizar o sonho de ser pai e educar meus filhos</p>
-     </div>
-     <div class="text-center p-4 bg-green-50 rounded-xl">
-      <div class="text-3xl mb-2">
-       🏠
-      </div>
-      <h3 class="font-semibold text-gray-800">Construir uma Família</h3>
-      <p class="text-gray-600 text-sm mt-2">Formar uma família unida e cheia de amor</p>
-     </div>
-     <div class="text-center p-4 bg-yellow-50 rounded-xl">
-      <div class="text-3xl mb-2">
-       ✨
-      </div>
-      <h3 class="font-semibold text-gray-800">Ver Jesus no Céu</h3>
-      <p class="text-gray-600 text-sm mt-2">Meu maior sonho espiritual e eterno</p>
-     </div>
-    </div>
-   </section>
-  </main><!-- Sub-páginas -->
-  <div id="subpage-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
-   <div class="flex items-center justify-center min-h-full p-4">
-    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-     <div class="p-8">
-      <div class="flex justify-between items-center mb-6">
-       <h2 id="subpage-title" class="text-3xl font-bold text-gray-800"></h2><button onclick="closeSubpage()" class="text-gray-500 hover:text-gray-700 text-2xl">✕</button>
-      </div>
-      <div id="subpage-content" class="space-y-6"><!-- Conteúdo será inserido dinamicamente -->
-      </div><!-- Galeria de fotos -->
-      <div class="mt-8">
-       <h3 class="text-2xl font-semibold text-gray-800 mb-4">📸 Galeria de Fotos</h3>
-       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="photo-placeholder aspect-square">
-         <div class="text-center text-gray-500">
-          <div class="text-3xl mb-2">
-           📷
-          </div>
-          <p class="text-sm">Adicionar foto</p>
-         </div>
-        </div>
-        <div class="photo-placeholder aspect-square">
-         <div class="text-center text-gray-500">
-          <div class="text-3xl mb-2">
-           📷
-          </div>
-          <p class="text-sm">Adicionar foto</p>
-         </div>
-        </div>
-        <div class="photo-placeholder aspect-square">
-         <div class="text-center text-gray-500">
-          <div class="text-3xl mb-2">
-           📷
-          </div>
-          <p class="text-sm">Adicionar foto</p>
-         </div>
-        </div>
-        <div class="photo-placeholder aspect-square">
-         <div class="text-center text-gray-500">
-          <div class="text-3xl mb-2">
-           📷
-          </div>
-          <p class="text-sm">Adicionar foto</p>
-         </div>
-        </div>
-        <div class="photo-placeholder aspect-square">
-         <div class="text-center text-gray-500">
-          <div class="text-3xl mb-2">
-           📷
-          </div>
-          <p class="text-sm">Adicionar foto</p>
-         </div>
-        </div>
-        <div class="photo-placeholder aspect-square">
-         <div class="text-center text-gray-500">
-          <div class="text-3xl mb-2">
-           📷
-          </div>
-          <p class="text-sm">Adicionar foto</p>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </div><!-- Footer -->
-  <footer class="gradient-bg text-white py-8 mt-16">
-   <div class="max-w-6xl mx-auto px-6 text-center">
-    <p class="text-lg mb-2">Bruno Gonçalves Oliveira</p>
-    <p class="opacity-80">"Foi o tempo que dedicaste à tua rosa que a fez tão importante." ❤️</p>
-   </div>
-  </footer>
-  <script>
-        // Configuração padrão
-        const defaultConfig = {
-            nome_completo: "Bruno Gonçalves Oliveira",
-            idade: "16 anos • Colégio Estadual Professor Júlio Szymanski",
-            trabalho: "Transportadora Nichele",
-            descricao_pessoal: "Divido meu dia entre os estudos e o trabalho na Transportadora Nichele, onde aprendo diariamente sobre responsabilidade, disciplina e dedicação — valores que carrego comigo em tudo o que faço. Sou apaixonado por UFC, futebol e, principalmente, pela minha namorada, Maria Luiza Pascuti.",
-            pais: "Erilda Aparecida e Messias Macedo",
-            irmaos: "Larissa (26), Ygor (25) e Henrique (23)",
-            background_color: "#1e3a8a",
-            surface_color: "#ffffff",
-            text_color: "#1f2937",
-            primary_action_color: "#3b82f6",
-            secondary_action_color: "#6b7280"
-        };
+</section>
 
-        // Animação de entrada para elementos
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+<!-- --------------------------------------------------------- -->
+<!-- TODO O RESTANTE DO SEU CÓDIGO (HEADER, SOBRE, SEÇÕES...)  -->
+<!-- --------------------------------------------------------- -->
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observar todos os cards
-        document.querySelectorAll('.card-hover, .section-card').forEach(card => {
-            observer.observe(card);
-        });
-
-        // Conteúdo das sub-páginas
-        const subpageContent = {
-            'familia': {
-                title: '👨‍👩‍👧‍👦 Minha Família',
-                content: `
-                    <div class="bg-blue-50 rounded-xl p-6 mb-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-4">❤️ A Base de Tudo</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            Minha família é a base da minha vida e os responsáveis pelos princípios que me guiam desde pequeno. 
-                            Venho de uma família grande, acolhedora e cheia de amor. Cada um tem um papel especial na minha formação.
-                        </p>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="bg-white rounded-xl p-6 border border-gray-200">
-                            <h4 class="font-semibold text-gray-800 mb-3">👨‍👩 Meus Pais</h4>
-                            <p class="text-gray-700">Erilda Aparecida e Messias Macedo são exemplos de dedicação e amor. 
-                            Eles me ensinaram os valores de responsabilidade e trabalho.</p>
-                        </div>
-                        <div class="bg-white rounded-xl p-6 border border-gray-200">
-                            <h4 class="font-semibold text-gray-800 mb-3">👫 Meus Irmãos</h4>
-                            <p class="text-gray-700">Larissa (26), Ygor (25) e Henrique (23). Cada um com sua personalidade única, 
-                            mas todos unidos pelo amor familiar.</p>
-                        </div>
-                    </div>
-                    <div class="bg-green-50 rounded-xl p-6 mt-6">
-                        <h4 class="font-semibold text-gray-800 mb-3">👶 Meus Sobrinhos</h4>
-                        <p class="text-gray-700">Laura (8), Samuel (6), Gabriel (3) e Miguel (1) enchem nossa casa de alegria e risadas. 
-                        Ser tio é uma das melhores experiências da minha vida!</p>
-                    </div>
-                `
-            },
-            'maria-luiza': {
-                title: '💕 Maria Luiza',
-                content: `
-                    <div class="bg-pink-50 rounded-xl p-6 mb-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-4 pulse-heart">💖 Minha Namorada</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            Maria Luiza Pascuti faz parte da minha caminhada e do meu crescimento pessoal. 
-                            Ela é uma das pessoas mais importantes da minha vida e me inspira a ser uma pessoa melhor a cada dia.
-                        </p>
-                    </div>
-                    <div class="bg-white rounded-xl p-6 border border-pink-200">
-                        <h4 class="font-semibold text-gray-800 mb-3">🌟 Nossa História</h4>
-                        <p class="text-gray-700">
-                            Juntos, construímos momentos especiais e compartilhamos sonhos. Ela me apoia em tudo 
-                            e é minha companheira nas alegrias e desafios da vida, amo essa garota e ela me faz se sentir amado e protegido.
-                        </p>
-                    </div>
-                `
-            },
-            'miguel': {
-                title: '👶 Miguel - Meu Afilhado',
-                content: `
-                    <div class="bg-blue-50 rounded-xl p-6 mb-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-4">💙 Miguel Alencar Keller</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            Sou padrinho do Miguel Alencar Keller, um piazinho de olhos azuis e uma das risadas mais lindas que já ouvi. 
-                            Ser padrinho é uma responsabilidade e alegria imensa!
-                        </p>
-                    </div>
-                    <div class="bg-white rounded-xl p-6 border border-blue-200">
-                        <h4 class="font-semibold text-gray-800 mb-3">🎈 Momentos Especiais</h4>
-                        <p class="text-gray-700">
-                            Cada sorriso, cada descoberta, cada momento com o Miguel é único. 
-                            Acompanhar seu crescimento e desenvolvimento é uma das maiores alegrias da minha vida.
-                        </p>
-                    </div>
-                `
-            },
-            'criancas': {
-                title: '🧒 As Crianças da Família',
-                content: `
-                    <div class="bg-yellow-50 rounded-xl p-6 mb-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-4">🌈 Alegria em Casa</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            Amo crianças e tudo o que traz leveza e bondade para a vida. 
-                            As crianças da nossa família enchem nossos dias de risadas, brincadeiras e muito amor.
-                        </p>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-white rounded-xl p-4 border border-gray-200">
-                            <h4 class="font-semibold text-gray-800">Laura (8 anos)</h4>
-                            <p class="text-gray-600 text-sm">A mais velha, sempre cuidando dos menores</p>
-                        </div>
-                        <div class="bg-white rounded-xl p-4 border border-gray-200">
-                            <h4 class="font-semibold text-gray-800">Samuel (6 anos)</h4>
-                            <p class="text-gray-600 text-sm">Cheio de energia e curiosidade</p>
-                        </div>
-                        <div class="bg-white rounded-xl p-4 border border-gray-200">
-                            <h4 class="font-semibold text-gray-800">Gabriel (3 anos)</h4>
-                            <p class="text-gray-600 text-sm">O arteiro da família</p>
-                        </div>
-                        <div class="bg-white rounded-xl p-4 border border-gray-200">
-                            <h4 class="font-semibold text-gray-800">Miguel (1 ano)</h4>
-                            <p class="text-gray-600 text-sm">O bebê que derrete nossos corações</p>
-                        </div>
-                    </div>
-                `
-            },
-            'futebol': {
-                title: '⚽ Futebol - Minha Paixão',
-                content: `
-                    <div class="bg-green-50 rounded-xl p-6 mb-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-4">🏆 Amor pelo Esporte</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            O futebol é uma das minhas grandes paixões! Seja jogando com os amigos, 
-                            assistindo aos jogos ou acompanhando meu time do coração, o futebol sempre faz parte da minha vida.
-                        </p>
-                    </div>
-                    <div class="bg-white rounded-xl p-6 border border-green-200">
-                        <h4 class="font-semibold text-gray-800 mb-3">⚽ Momentos no Campo</h4>
-                        <p class="text-gray-700">
-                            Adoro jogar bola com os amigos nos finais de semana. É um momento de descontração, 
-                            jogo no Alvorada FC e no Real Maria, sou pivô e minha perna boa é a direita.
-                        </p>
-                    </div>
-                `
-            },
-            'amizades': {
-                title: '👥 Minhas Amizades',
-                content: `
-                    <div class="bg-purple-50 rounded-xl p-6 mb-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-4">🤝 Amigos Verdadeiros</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            Tenho a sorte de ter amigos incríveis que fazem parte da minha jornada. 
-                            São pessoas que me apoiam, me fazem rir e tornam a vida muito mais especial.
-                        </p>
-                    </div>
-                    <div class="bg-white rounded-xl p-6 border border-purple-200">
-                        <h4 class="font-semibold text-gray-800 mb-3">🎉 Momentos Juntos</h4>
-                        <p class="text-gray-700">
-                            Seja nos estudos, no trabalho ou nos momentos de lazer, meus amigos sempre estão presentes. 
-                            Valorizamos nossa amizade e criamos memórias que levaremos para sempre.
-                        </p>
-                    </div>
-                `
-            },
-            'igreja': {
-                title: '⛪ Minha Fé',
-                content: `
-                    <div class="bg-yellow-50 rounded-xl p-6 mb-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-4">🙏 Vida Espiritual</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            A igreja é um lugar importante na minha vida, onde encontro paz, orientação e comunhão. 
-                            Minha fé me fortalece e me guia nas decisões dificeis faço parte da igreja Catolica Apostolica Romana.
-                        </p>
-                    </div>
-                    <div class="bg-white rounded-xl p-6 border border-yellow-200">
-                        <h4 class="font-semibold text-gray-800 mb-3">✨ Momentos de Reflexão</h4>
-                        <p class="text-gray-700">
-                            Participar das missas, atividades e momentos de oração me trazem serenidade 
-                            e me ajudam a manter os valores que aprendi em família.
-                        </p>
-                    </div>
-                `
-            },
-            'animais': {
-                title: '🐾 Amor pelos Animais',
-                content: `
-                    <div class="bg-orange-50 rounded-xl p-6 mb-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-4">🐕 Companheiros Especiais</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            Amo animais e tudo o que traz leveza e bondade para a vida. 
-                            Os animais nos ensinam sobre amor incondicional, lealdade e simplicidade.
-                        </p>
-                    </div>
-                    <div class="bg-white rounded-xl p-6 border border-orange-200">
-                        <h4 class="font-semibold text-gray-800 mb-3">💝 Momentos de Carinho</h4>
-                        <p class="text-gray-700">
-                            Seja brincando, cuidando ou simplesmente observando os animais, 
-                            sempre me sinto conectado com a natureza e com o que há de mais puro no mundo.
-                        </p>
-                    </div>
-                `
-            }
-        };
-
-        // Função para mostrar sub-página
-        function showSection(sectionId) {
-            const content = subpageContent[sectionId];
-            if (content) {
-                document.getElementById('subpage-title').innerHTML = content.title;
-                document.getElementById('subpage-content').innerHTML = content.content;
-                document.getElementById('subpage-overlay').classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        // Função para fechar sub-página
-        function closeSubpage() {
-            document.getElementById('subpage-overlay').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Fechar ao clicar no overlay
-        document.getElementById('subpage-overlay').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeSubpage();
-            }
-        });
-
-        // Função para navegar no carrossel de fotos
-        function scrollCarousel(direction) {
-            const carousel = document.getElementById('photo-carousel');
-            const scrollAmount = 200; // pixels para rolar
-            
-            if (direction === 'left') {
-                carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            } else {
-                carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            }
-        }
-
-        // Tornar funções globais
-        window.showSection = showSection;
-        window.closeSubpage = closeSubpage;
-        window.scrollCarousel = scrollCarousel;
-
-        // Implementação do Element SDK
-        async function onConfigChange(config) {
-            // Atualizar textos
-            document.getElementById('nome-completo').textContent = config.nome_completo || defaultConfig.nome_completo;
-            document.getElementById('idade-escola').textContent = config.idade || defaultConfig.idade;
-            document.getElementById('trabalho').textContent = config.trabalho || defaultConfig.trabalho;
-            document.getElementById('descricao-pessoal').textContent = config.descricao_pessoal || defaultConfig.descricao_pessoal;
-            document.getElementById('pais').innerHTML = `<strong>Pais:</strong> ${config.pais || defaultConfig.pais}`;
-            document.getElementById('irmaos').innerHTML = `<strong>Irmãos:</strong> ${config.irmaos || defaultConfig.irmaos}`;
-
-            // Atualizar cores
-            const bgColor = config.background_color || defaultConfig.background_color;
-            const surfaceColor = config.surface_color || defaultConfig.surface_color;
-            const textColor = config.text_color || defaultConfig.text_color;
-            const primaryActionColor = config.primary_action_color || defaultConfig.primary_action_color;
-
-            // Aplicar gradiente de fundo
-            document.querySelectorAll('.gradient-bg').forEach(element => {
-                element.style.background = `linear-gradient(135deg, ${bgColor} 0%, #3b82f6 50%, #60a5fa 100%)`;
-            });
-
-            // Aplicar cores de superfície
-            document.querySelectorAll('.section-card').forEach(card => {
-                card.style.backgroundColor = surfaceColor;
-            });
-
-            // Aplicar cores de texto
-            document.querySelectorAll('h1, h2, h3').forEach(heading => {
-                if (!heading.closest('.gradient-bg')) {
-                    heading.style.color = textColor;
-                }
-            });
-        }
-
-        function mapToCapabilities(config) {
-            return {
-                recolorables: [
-                    {
-                        get: () => config.background_color || defaultConfig.background_color,
-                        set: (value) => {
-                            if (window.elementSdk) {
-                                window.elementSdk.setConfig({ background_color: value });
-                            }
-                        }
-                    },
-                    {
-                        get: () => config.surface_color || defaultConfig.surface_color,
-                        set: (value) => {
-                            if (window.elementSdk) {
-                                window.elementSdk.setConfig({ surface_color: value });
-                            }
-                        }
-                    },
-                    {
-                        get: () => config.text_color || defaultConfig.text_color,
-                        set: (value) => {
-                            if (window.elementSdk) {
-                                window.elementSdk.setConfig({ text_color: value });
-                            }
-                        }
-                    },
-                    {
-                        get: () => config.primary_action_color || defaultConfig.primary_action_color,
-                        set: (value) => {
-                            if (window.elementSdk) {
-                                window.elementSdk.setConfig({ primary_action_color: value });
-                            }
-                        }
-                    }
-                ],
-                borderables: [],
-                fontEditable: undefined,
-                fontSizeable: undefined
-            };
-        }
-
-        function mapToEditPanelValues(config) {
-            return new Map([
-                ["nome_completo", config.nome_completo || defaultConfig.nome_completo],
-                ["idade", config.idade || defaultConfig.idade],
-                ["escola", config.escola || "Colégio Estadual Professor Júlio Szymanski"],
-                ["trabalho", config.trabalho || defaultConfig.trabalho],
-                ["descricao_pessoal", config.descricao_pessoal || defaultConfig.descricao_pessoal],
-                ["pais", config.pais || defaultConfig.pais],
-                ["irmaos", config.irmaos || defaultConfig.irmaos]
-            ]);
-        }
-
-        // Inicializar Element SDK
-        if (window.elementSdk) {
-            window.elementSdk.init({
-                defaultConfig,
-                onConfigChange,
-                mapToCapabilities,
-                mapToEditPanelValues
-            });
-        }
-    </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99eb0f9a46ae6b21',t:'MTc2MzE3MTA0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
