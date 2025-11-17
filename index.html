@@ -1,72 +1,181 @@
 <!doctype html>
 <html lang="pt-BR" class="h-full">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bruno Gonçalves - Página Pessoal</title>
+
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="h-full">
 
-<!-- Esteira de Fotos -->
+<!-- ================= CARROSSEL ================ -->
+
 <section class="bg-gray-100 py-8 overflow-hidden">
     <div class="max-w-6xl mx-auto px-6">
+
         <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">📸 Minhas Fotos</h2>
+
         <div class="photo-carousel-container relative">
             <div id="photo-carousel" class="flex gap-4 overflow-x-auto pb-4 scroll-smooth">
-                <!-- Foto 1 -->
-                <img src="eu.jpeg" alt="Minha foto de perfil" class="photo-carousel-item">
-                <!-- Foto 2 -->
-                <img src="eu 2.jpeg" alt="Outra foto" class="photo-carousel-item">
-                <!-- Foto placeholders -->
-                <div class="photo-slot">
-                    <div class="text-center text-gray-500">
-                        <div class="text-3xl mb-2"> 📷 </div>
-                        <p class="text-sm">Adicionar foto</p>
-                    </div>
-                </div>
-                <!-- Outros placeholders -->
-                <div class="photo-slot">
-                    <div class="text-center text-gray-500">
-                        <div class="text-3xl mb-2"> 📷 </div>
-                        <p class="text-sm">Adicionar foto</p>
-                    </div>
-                </div>
-                <!-- Adicione mais placeholders conforme necessário -->
+
+                <!-- 6 FOTOS - COLE SUAS IMAGENS AQUI -->
+                <img src="https://picsum.photos/400?1" class="carousel-img">
+                <img src="https://picsum.photos/400?2" class="carousel-img">
+                <img src="https://picsum.photos/400?3" class="carousel-img">
+                <img src="https://picsum.photos/400?4" class="carousel-img">
+                <img src="https://picsum.photos/400?5" class="carousel-img">
+                <img src="https://picsum.photos/400?6" class="carousel-img">
+
             </div>
 
-            <!-- Botões de navegação -->
+            <!-- Botões esquerda / direita -->
             <button onclick="scrollCarousel('left')" class="carousel-btn left">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
+                <span>◀</span>
             </button>
+
             <button onclick="scrollCarousel('right')" class="carousel-btn right">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
+                <span>▶</span>
             </button>
         </div>
+
         <p class="text-center text-gray-600 mt-4 text-sm">← Arraste para ver mais fotos →</p>
+
     </div>
 </section>
 
-<!-- Header com gradiente -->
+<!-- HEADER -->
 <header class="gradient-bg text-white py-16">
     <div class="max-w-6xl mx-auto px-6 text-center">
+
         <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-6xl">
             👨‍🎓
         </div>
-        <h1 id="nome-completo" class="text-4xl md:text-5xl font-bold mb-4">
-            Bruno Gonçalves Oliveira
-        </h1>
-        <p id="idade-escola" class="text-xl mb-2">16 anos • Colégio Estadual Professor Júlio Szymanski</p>
-        <p id="trabalho" class="text-lg opacity-90">Transportadora Nichele</p>
+
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Bruno Gonçalves Oliveira</h1>
+        <p class="text-xl mb-2">16 anos • Colégio Estadual Professor Júlio Szymanski</p>
+        <p class="text-lg opacity-90">Transportadora Nichele</p>
+
     </div>
 </header>
 
-<!-- Adicione o restante do conteúdo aqui (sobre mim, família, etc.) -->
+<main class="max-w-6xl mx-auto px-6 py-12">
+
+<!-- ==================== SOBRE MIM ===================== -->
+
+<section class="section-card rounded-2xl p-8 mb-12 fade-in">
+
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+        <span class="text-4xl mr-3">🌟</span> Sobre Mim
+    </h2>
+
+    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+        Divido meu dia entre os estudos e o trabalho na Transportadora Nichele...
+    </p>
+
+    <div class="bg-blue-50 rounded-xl p-6">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+            <span class="text-3xl mr-3 pulse-heart">❤️</span> Minha Família
+        </h3>
+
+        <p class="text-gray-700 mb-3"><strong>Pais:</strong> Erilda Aparecida e Messias Macedo</p>
+        <p class="text-gray-700"><strong>Irmãos:</strong> Larissa (26), Ygor (25) e Henrique (23)</p>
+        <p class="text-gray-700 mt-3"><strong>Sobrinhos:</strong> Laura (8), Samuel (6), Gabriel (3) e Miguel (1)</p>
+        <p class="text-gray-700 mt-3"><strong>Afilhado:</strong> Miguel Alencar Keller 👶💙</p>
+    </div>
+
+</section>
+
+<!-- ====== SEÇÕES COM FOTO DE CAPA (FAMÍLIA, MARIA LUIZA ETC) ====== -->
+
+<section class="fade-in">
+    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center flex items-center justify-center">
+        <span class="text-4xl mr-3">📸</span> Meus Momentos Especiais
+    </h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- =================== FAMÍLIA ====================== -->
+        <div class="section-card rounded-2xl p-6 card-hover">
+            <button onclick="showSection('familia')" class="w-full text-left">
+                <h3 class="section-title">👨‍👩‍👧‍👦 Família →</h3>
+            </button>
+
+            <img src="https://picsum.photos/400?fam" class="capa-foto">
+        </div>
+
+        <!-- =================== MARIA LUIZA =================== -->
+        <div class="section-card rounded-2xl p-6 card-hover">
+            <button onclick="showSection('maria-luiza')" class="w-full text-left">
+                <h3 class="section-title">💕 Maria Luiza →</h3>
+            </button>
+
+            <img src="https://picsum.photos/400?mlu" class="capa-foto">
+        </div>
+
+        <!-- =================== MIGUEL ======================== -->
+        <div class="section-card rounded-2xl p-6 card-hover">
+            <button onclick="showSection('miguel')" class="w-full text-left">
+                <h3 class="section-title">👶 Miguel (Afilhado) →</h3>
+            </button>
+
+            <img src="https://picsum.photos/400?mig" class="capa-foto">
+        </div>
+
+        <!-- =================== FUTEBOL ======================= -->
+        <div class="section-card rounded-2xl p-6 card-hover">
+            <button onclick="showSection('futebol')" class="w-full text-left">
+                <h3 class="section-title">⚽ Futebol →</h3>
+            </button>
+
+            <img src="https://picsum.photos/400?fut" class="capa-foto">
+        </div>
+
+        <!-- =================== GALERIA ======================= -->
+        <div class="section-card rounded-2xl p-6 card-hover">
+            <button onclick="showSection('galeria')" class="w-full text-left">
+                <h3 class="section-title">📷 Galeria →</h3>
+            </button>
+
+            <img src="https://picsum.photos/400?gal" class="capa-foto">
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<!-- =================== SUBPÁGINAS POP-UP ===================== -->
+
+<div id="subpage-overlay" class="overlay hidden">
+
+    <div class="overlay-center">
+
+        <div class="subpage-box">
+
+            <div class="subpage-header">
+                <h2 id="subpage-title" class="sub-title"></h2>
+                <button onclick="closeSubpage()" class="close-btn">✕</button>
+            </div>
+
+            <div id="subpage-content" class="space-y-6"></div>
+
+            <h3 class="galeria-title">📸 Galeria de Fotos</h3>
+
+            <!-- AQUI AS FOTOS SERÃO INSERIDAS VIA JS -->
+            <div id="subpage-gallery" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
 
 <footer class="gradient-bg text-white py-8 mt-16">
     <div class="max-w-6xl mx-auto px-6 text-center">
