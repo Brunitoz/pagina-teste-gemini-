@@ -14,8 +14,6 @@
 
 <body class="h-full">
 
-<!-- ================= CARROSSEL ================ -->
-
 <section class="bg-gray-100 py-8 overflow-hidden">
     <div class="max-w-6xl mx-auto px-6">
 
@@ -24,7 +22,6 @@
         <div class="photo-carousel-container relative">
             <div id="photo-carousel" class="flex gap-4 overflow-x-auto pb-4 scroll-smooth">
 
-                <!-- 6 FOTOS - COLE SUAS IMAGENS AQUI -->
                 <img src="eu 2.jpeg" class="carousel-img">
                 <img src="euchefe.jpeg" class="carousel-img">
                 <img src="belha.jpeg" class="carousel-img">
@@ -34,7 +31,6 @@
 
             </div>
 
-            <!-- Botões esquerda / direita -->
             <button onclick="scrollCarousel('left')" class="carousel-btn left">
                 <span>◀</span>
             </button>
@@ -49,7 +45,6 @@
     </div>
 </section>
 
-<!-- HEADER -->
 <header class="gradient-bg text-white py-16">
     <div class="max-w-6xl mx-auto px-6 text-center">
 
@@ -65,8 +60,6 @@
 </header>
 
 <main class="max-w-6xl mx-auto px-6 py-12">
-
-<!-- ==================== SOBRE MIM ===================== -->
 
 <section class="section-card rounded-2xl p-8 mb-12 fade-in">
 
@@ -91,8 +84,6 @@
 
 </section>
 
-<!-- ====== SEÇÕES COM FOTO DE CAPA (FAMÍLIA, MARIA LUIZA ETC) ====== -->
-
 <section class="fade-in">
     <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center flex items-center justify-center">
         <span class="text-4xl mr-3">📸</span> Meus Momentos Especiais
@@ -100,7 +91,6 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <!-- =================== FAMÍLIA ====================== -->
         <div class="section-card rounded-2xl p-6 card-hover">
             <button onclick="showSection('familia')" class="w-full text-left">
                 <h3 class="section-title">👨‍👩‍👧‍👦 Família →</h3>
@@ -109,7 +99,6 @@
             <img src="meus amores.jpeg" class="capa-foto">
         </div>
 
-        <!-- =================== MARIA LUIZA =================== -->
         <div class="section-card rounded-2xl p-6 card-hover">
             <button onclick="showSection('maria-luiza')" class="w-full text-left">
                 <h3 class="section-title">💕 Maria Luiza →</h3>
@@ -118,7 +107,6 @@
             <img src="mb2.jpeg" class="capa-foto">
         </div>
 
-        <!-- =================== MIGUEL ======================== -->
         <div class="section-card rounded-2xl p-6 card-hover">
             <button onclick="showSection('miguel')" class="w-full text-left">
                 <h3 class="section-title">👶 Miguel (Afilhado) →</h3>
@@ -127,7 +115,6 @@
             <img src="miguel123.jpeg" class="capa-foto">
         </div>
 
-        <!-- =================== FUTEBOL ======================= -->
         <div class="section-card rounded-2xl p-6 card-hover">
             <button onclick="showSection('futebol')" class="w-full text-left">
                 <h3 class="section-title">⚽ Futebol →</h3>
@@ -136,7 +123,6 @@
             <img src="alvorada.jpeg" class="capa-foto">
         </div>
 
-        <!-- =================== GALERIA ======================= -->
         <div class="section-card rounded-2xl p-6 card-hover">
             <button onclick="showSection('galeria')" class="w-full text-left">
                 <h3 class="section-title">📷 amigos →</h3>
@@ -144,13 +130,19 @@
 
             <img src="trcs.jpeg" class="capa-foto">
         </div>
+        
+        <div class="section-card rounded-2xl p-6 card-hover">
+            <button onclick="showSection('igreja')" class="w-full text-left">
+                <h3 class="section-title">⛪ Igreja →</h3>
+            </button>
+            
+            <img src="eu,igreja.jpeg" class="capa-foto">
+        </div>
 
     </div>
 </section>
 
 </main>
-
-<!-- =================== SUBPÁGINAS POP-UP ===================== -->
 
 <div id="subpage-overlay" class="overlay hidden">
 
@@ -167,15 +159,12 @@
 
             <h3 class="galeria-title">📸 Galeria de Fotos</h3>
 
-            <!-- AQUI AS FOTOS SERÃO INSERIDAS VIA JS -->
             <div id="subpage-gallery" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
         </div>
 
     </div>
 </div>
-
-<!-- FOOTER -->
 
 <footer class="gradient-bg text-white py-8 mt-16">
     <div class="max-w-6xl mx-auto px-6 text-center">
